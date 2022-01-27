@@ -4,6 +4,8 @@ import base64
 import hashlib
 
 menu = '''
+~ QuickBuffer | By Lexxrt
+
 Usage:
     ~ Options:
         bin     (Denary To Binary)
@@ -11,6 +13,7 @@ Usage:
         b64e    (Base64 Encode)
         b64d    (Base64 Decode)
         MD5     (MD5 Hashing)
+        rot13   (Rot13 Encoding)
         SHA-1   (SHA-1 Hashing)
         SHA-224 (SHA-224 Hashing)
         SHA-256 (SHA-256 Hashing)
@@ -44,6 +47,9 @@ def main(option: str, value: str):
     elif option == 'MD5':
         md5 = hashlib.md5(value.encode('ascii')).hexdigest()
         print('[+] Output:', md5)
+    elif option == 'rot13':
+        rot13 = str.maketrans('ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz', 'NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm')
+        print('[+] Output', value.translate(rot13))
     elif option == 'SHA-1':
         sha1 = hashlib.sha1(value.encode('ascii')).hexdigest()
         print('[+] Output:', sha1)
