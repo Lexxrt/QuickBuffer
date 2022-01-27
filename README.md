@@ -4,7 +4,7 @@
 
 - `python3 quickbuffer.py [OPTION] [DATA]` 🚀
 
-<img src="img/img.jpg">
+> <img src="img/img.jpg">
 
 *Options:*
 
